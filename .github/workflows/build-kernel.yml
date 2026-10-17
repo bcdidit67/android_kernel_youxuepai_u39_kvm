@@ -9,6 +9,7 @@ on:
         default: 'yxp_u39_vendor_defconfig'
         type: choice
         options:
+          - donor_k71v1_kvm
           - yxp_u39_vendor_defconfig
           - yxp_u39_kvm_defconfig
       toolchain:
@@ -99,8 +100,12 @@ jobs:
 
       - name: 放入 defconfig
         run: |
-          cp "configs/${KCONFIG}" "kernel/arch/arm64/configs/${KCONFIG}"
-          wc -l "kernel/arch/arm64/configs/${KCONFIG}"
+          if [ "$KCONFIG" != "donor_k71v1_kvm" ]; then
+            cp "configs/${KCONFIG}" "kernel/arch/arm64/configs/${KCONFIG}"
+            wc -l "kernel/arch/arm64/configs/${KCONFIG}"
+          else
+            echo 'donor 模式：直接使用内核树自带的 k71v1_64_bsp_defconfig'
+          fi
 
       - name: 生成 .config 并打印 KVM 相关最终态
         working-directory: kernel
@@ -111,7 +116,14 @@ jobs:
             gcc-aarch64)   CROSS="aarch64-linux-gnu-" ;;
           esac
           echo "CROSS_COMPILE=$CROSS"
-          make ARCH=arm64 CROSS_COMPILE="$CROSS" "${KCONFIG}"
+          if [ "$KCONFIG" = "donor_k71v1_kvm" ]; then
+            make ARCH=arm64 CROSS_COMPILE="$CROSS" k71v1_64_bsp_defconfig
+            ./scripts/config --file .config -e VIRTUALIZATION -e KVM -e MODVERSIONS \
+              -d HARDEN_BRANCH_PREDICTOR --set-str LOCALVERSION ""
+            make ARCH=arm64 CROSS_COMPILE="$CROSS" olddefconfig
+          else
+            make ARCH=arm64 CROSS_COMPILE="$CROSS" "${KCONFIG}"
+          fi
           echo '--- KVM 相关 ---'
           grep -E 'CONFIG_(VIRTUALIZATION|KVM|KVM_ARM_VGIC_V3|HARDEN_BRANCH_PREDICTOR|MODVERSIONS|LOCALVERSION|ARM_GIC_V3|ARM_ARCH_TIMER|OF=|ARM64_4K_PAGES|ARM64_16K_PAGES)' .config || true
 
