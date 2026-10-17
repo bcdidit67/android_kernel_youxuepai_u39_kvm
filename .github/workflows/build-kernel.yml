@@ -33,8 +33,8 @@ jobs:
     env:
       KCONFIG: ${{ github.event.inputs.config || 'yxp_u39_vendor_defconfig' }}
       TOOLCHAIN: ${{ github.event.inputs.toolchain || 'gcc49-android' }}
-      UPSTREAM: https://github.com/Hadenix/android_kernel_alps-4.4
-      UPSTREAM_BRANCH: '4.4.146'
+      UPSTREAM: https://github.com/CyberJalagam/kernel_oppo_mt6771
+      UPSTREAM_BRANCH: 'Alien-Xtreme-master'
 
     steps:
       - name: Checkout（本仓库：只有 defconfig 与 workflow）
@@ -56,13 +56,22 @@ jobs:
           ls arch/arm64/boot/dts/mediatek | grep -E 'mt6771|evb6771' || true
           git log -1 --oneline
 
-      - name: donor 树补丁（去掉缺失头文件的 DRAM DVFSRC 驱动）
+      - name: donor 树补丁（版本号对齐 4.4.146 + 自检）
         run: |
-          # donor 树缺 drivers/misc/mediatek/dramc/mt6771/helio-dvfsrc.h，
-          # 而 drivers/devfreq/Makefile 对 MACH_MT6771 是无条件编译，必须摘掉
-          sed -i '/helio-dvfsrc/d' kernel/drivers/devfreq/Makefile
-          echo '--- 补丁后 Makefile 中 6771 相关行 ---'
-          grep -n 'MACH_MT6771' kernel/drivers/devfreq/Makefile || echo '(none)'
+          cd kernel
+          echo '--- 原始版本 ---'; sed -n '1,5p' Makefile
+          # vermagic 必须与厂商内核 4.4.146 一致，否则 vendor 预编译 .ko 拒绝加载
+          sed -i 's/^SUBLEVEL = .*/SUBLEVEL = 146/' Makefile
+          sed -i 's/^EXTRAVERSION = .*/EXTRAVERSION =/' Makefile
+          echo '--- 补丁后版本 ---'; sed -n '1,5p' Makefile
+          echo '--- 完整性自检 ---'
+          for f in drivers/devfreq/helio-dvfsrc.h drivers/devfreq/helio-dvfsrc-opp.h \
+                   drivers/mmc/host/mediatek/ComboA/autok.h \
+                   drivers/misc/mediatek/base/power/cm_mgr_v1/mtk_cm_mgr.h \
+                   virt/kvm/arm/vgic-v3.c virt/kvm/arm/vgic-v3-emul.c \
+                   arch/arm64/boot/dts/mediatek/mt6771.dts ; do
+            [ -f "$f" ] && echo "OK   $f" || echo "MISS $f"
+          done
 
       - name: 取工具链 gcc49-android（AOSP 4.9 prebuilt，GitHub 镜像）
         if: env.TOOLCHAIN == 'gcc49-android'
