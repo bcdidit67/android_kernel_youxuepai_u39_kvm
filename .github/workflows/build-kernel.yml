@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       config:
-        description: 'defconfig 名称（vendor 基线 / KVM）'
+        description: 'defconfig 名称（先用 vendor 跑基线，通过后再跑 kvm）'
         required: true
         default: 'yxp_u39_vendor_defconfig'
         type: choice
@@ -14,10 +14,11 @@ on:
       toolchain:
         description: '工具链'
         required: true
-        default: 'clang-4691093'
+        default: 'gcc49-android'
         type: choice
         options:
-          - clang-4691093
+          - gcc49-android
+          - clang4691093
           - gcc-aarch64
 
 concurrency:
@@ -30,79 +31,102 @@ jobs:
     timeout-minutes: 120
     env:
       KCONFIG: ${{ github.event.inputs.config || 'yxp_u39_vendor_defconfig' }}
-      TOOLCHAIN: ${{ github.event.inputs.toolchain || 'clang-4691093' }}
+      TOOLCHAIN: ${{ github.event.inputs.toolchain || 'gcc49-android' }}
       UPSTREAM: https://github.com/Hadenix/android_kernel_alps-4.4
       UPSTREAM_BRANCH: '4.4.146'
 
     steps:
-      - name: Checkout (本仓库：只含 defconfig 与 workflow)
+      - name: Checkout（本仓库：只有 defconfig 与 workflow）
         uses: actions/checkout@v4
 
-      - name: 安装依赖
+      - name: 安装基础依赖
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq bc bison flex libssl-dev make git curl xz-utils gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
+          sudo apt-get install -y -qq bc bison flex libssl-dev make git curl xz-utils cpio
           df -h /
 
       - name: 克隆上游 MTK ALPS 4.4.146 内核树
         run: |
           git clone --depth 1 -b "$UPSTREAM_BRANCH" "$UPSTREAM" kernel
           cd kernel
-          echo "--- 目录自检 ---"
-          ls arch/arm64/configs | head -20
-          ls arch/arm64/boot/dts/mediatek | grep -E 'mt6771|evb6771|k71v1' || true
+          echo '--- 关键目录自检 ---'
           ls virt/kvm/arm/ || true
+          grep -n 'KVM_ARM_VGIC_V3' arch/arm64/kvm/Kconfig || true
+          ls arch/arm64/boot/dts/mediatek | grep -E 'mt6771|evb6771' || true
           git log -1 --oneline
 
-      - name: 取 AOSP clang 4691093（与原厂编译内核所用版本一致）
-        if: env.TOOLCHAIN == 'clang-4691093'
+      - name: 取工具链 gcc49-android（AOSP 4.9 prebuilt，GitHub 镜像）
+        if: env.TOOLCHAIN == 'gcc49-android'
         run: |
           set -e
-          URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r1/clang-4691093.tar.gz"
-          curl -fL --retry 3 -o /tmp/clang.tar.gz "$URL"
+          URL="https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9/archive/refs/heads/lineage-18.1.tar.gz"
+          curl -fL --retry 3 -o /tmp/gcc49.tgz "$URL"
+          mkdir -p "$RUNNER_TEMP/gcc49"
+          tar -xzf /tmp/gcc49.tgz -C "$RUNNER_TEMP/gcc49" --strip-components=1
+          chmod -R +x "$RUNNER_TEMP/gcc49/bin" || true
+          ls "$RUNNER_TEMP/gcc49/bin" | head
+          "$RUNNER_TEMP/gcc49/bin/aarch64-linux-android-gcc" --version | head -2
+
+      - name: 取工具链 clang4691093（AOSP prebuilt，多 URL 回退）
+        if: env.TOOLCHAIN == 'clang4691093'
+        run: |
+          sudo apt-get install -y -qq gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
+          ok=0
+          for U in \
+            "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r34/clang-4691093.tar.gz" \
+            "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/android-9.0.0_r34/clang-4691093.tar.gz" \
+            "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r9/clang-4691093.tar.gz" ; do
+            echo "试: $U"
+            if curl -fsL --retry 2 --max-time 180 -o /tmp/clang.tgz "$U"; then ok=1; break; fi
+          done
+          if [ "$ok" != "1" ]; then echo '所有 clang 源都失败'; exit 1; fi
           mkdir -p "$RUNNER_TEMP/clang"
-          tar -xzf /tmp/clang.tar.gz -C "$RUNNER_TEMP/clang"
+          tar -xzf /tmp/clang.tgz -C "$RUNNER_TEMP/clang"
           "$RUNNER_TEMP/clang/bin/clang" --version
           echo "$RUNNER_TEMP/clang/bin" >> "$GITHUB_PATH"
+
+      - name: 取工具链 gcc-aarch64（Ubuntu 自带交叉 gcc）
+        if: env.TOOLCHAIN == 'gcc-aarch64'
+        run: sudo apt-get install -y -qq gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
 
       - name: 放入 defconfig
         run: |
           cp "configs/${KCONFIG}" "kernel/arch/arm64/configs/${KCONFIG}"
-          ls -l "kernel/arch/arm64/configs/${KCONFIG}"
+          wc -l "kernel/arch/arm64/configs/${KCONFIG}"
 
-      - name: 生成 .config
+      - name: 生成 .config 并打印 KVM 相关最终态
         working-directory: kernel
         run: |
-          if [ "$TOOLCHAIN" = "clang-4691093" ]; then
-            export PATH="$RUNNER_TEMP/clang/bin:$PATH"
-            make ARCH=arm64 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- "${KCONFIG}"
-          else
-            make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- "${KCONFIG}"
-          fi
-          echo '--- KVM 相关最终态 ---'
-          grep -E 'CONFIG_(VIRTUALIZATION|KVM|KVM_ARM_MAX_VCPUS|HARDEN_BRANCH_PREDICTOR|MODVERSIONS|LOCALVERSION|ARM_GIC_V3|ARM_ARCH_TIMER|OF=|ARM64_4K_PAGES|ARM64_16K_PAGES)' .config || true
+          case "$TOOLCHAIN" in
+            gcc49-android) CROSS="$RUNNER_TEMP/gcc49/bin/aarch64-linux-android-" ;;
+            clang4691093)  CROSS="aarch64-linux-gnu-" ;;
+            gcc-aarch64)   CROSS="aarch64-linux-gnu-" ;;
+          esac
+          echo "CROSS_COMPILE=$CROSS"
+          make ARCH=arm64 CROSS_COMPILE="$CROSS" "${KCONFIG}"
+          echo '--- KVM 相关 ---'
+          grep -E 'CONFIG_(VIRTUALIZATION|KVM|KVM_ARM_VGIC_V3|HARDEN_BRANCH_PREDICTOR|MODVERSIONS|LOCALVERSION|ARM_GIC_V3|ARM_ARCH_TIMER|OF=|ARM64_4K_PAGES|ARM64_16K_PAGES)' .config || true
 
-      - name: 编译 Image（只编内核，不编 dtb：DTB 用原厂的）
+      - name: 编译 Image（只编内核；DTB 用原厂的，不编 dtbs）
         working-directory: kernel
         run: |
           set -o pipefail
-          if [ "$TOOLCHAIN" = "clang-4691093" ]; then
-            make ARCH=arm64 -j"$(nproc)" \
-              CC=clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- \
-              Image 2>&1 | tail -80
-          else
-            make ARCH=arm64 -j"$(nproc)" CROSS_COMPILE=aarch64-linux-gnu- Image 2>&1 | tail -80
-          fi
+          case "$TOOLCHAIN" in
+            gcc49-android) CROSS="$RUNNER_TEMP/gcc49/bin/aarch64-linux-android-"; EXTRA="" ;;
+            clang4691093)  CROSS="aarch64-linux-gnu-"; EXTRA="CC=clang CLANG_TRIPLE=aarch64-linux-gnu-" ;;
+            gcc-aarch64)   CROSS="aarch64-linux-gnu-"; EXTRA="" ;;
+          esac
+          make ARCH=arm64 -j"$(nproc)" CROSS_COMPILE="$CROSS" $EXTRA Image 2>&1 | tail -120
 
       - name: 产物自检
         working-directory: kernel
         run: |
           ls -l arch/arm64/boot/Image
-          echo '--- 版本串（必须是 4.4.146 且无 -dirty / + 后缀）---'
-          strings arch/arm64/boot/Image | grep -m1 'Linux version 4'
+          echo '--- 版本串（须为 4.4.146，且没有 -dirty / +）---'
+          strings arch/arm64/boot/Image | grep -m1 'Linux version 4' || true
           echo '--- KVM 符号 ---'
-          strings arch/arm64/boot/Image | grep -iE '^kvm|kvm_vgic' | head -10 || true
-          echo '--- EL 判定串（首刷后看 dmesg 用）---'
+          strings arch/arm64/boot/Image | grep -iE 'kvm' | sort -u | head -15 || true
+          echo '--- EL 判定串（首刷后看 dmesg）---'
           strings arch/arm64/boot/Image | grep -m2 'All CPU(s) started' || true
           sha256sum arch/arm64/boot/Image
 
