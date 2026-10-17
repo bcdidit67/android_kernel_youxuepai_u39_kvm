@@ -55,6 +55,14 @@ jobs:
           ls arch/arm64/boot/dts/mediatek | grep -E 'mt6771|evb6771' || true
           git log -1 --oneline
 
+      - name: donor 树补丁（去掉缺失头文件的 DRAM DVFSRC 驱动）
+        run: |
+          # donor 树缺 drivers/misc/mediatek/dramc/mt6771/helio-dvfsrc.h，
+          # 而 drivers/devfreq/Makefile 对 MACH_MT6771 是无条件编译，必须摘掉
+          sed -i '/helio-dvfsrc/d' kernel/drivers/devfreq/Makefile
+          echo '--- 补丁后 Makefile 中 6771 相关行 ---'
+          grep -n 'MACH_MT6771' kernel/drivers/devfreq/Makefile || echo '(none)'
+
       - name: 取工具链 gcc49-android（AOSP 4.9 prebuilt，GitHub 镜像）
         if: env.TOOLCHAIN == 'gcc49-android'
         run: |
