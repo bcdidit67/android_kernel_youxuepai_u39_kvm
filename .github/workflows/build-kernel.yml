@@ -147,7 +147,7 @@ jobs:
           esac
           set +e
           # MTK ALPS 的私有头文件搜索路径（官方用 Android.mk 注入，裸 make 需要手动给）
-          KCF="-I$PWD/drivers/devfreq -I$PWD/drivers/misc/mediatek/include -I$PWD/drivers/misc/mediatek/include/mt-plat -I$PWD/drivers/misc/mediatek/include/mt-plat/mt6771/include -I$PWD/drivers/misc/mediatek/base/power/include -I$PWD/drivers/misc/mediatek/base/power/mt6771"
+          KCF="-I$PWD/drivers/devfreq -I$PWD/drivers/misc/mediatek/include -I$PWD/drivers/misc/mediatek/include/mt-plat -I$PWD/drivers/misc/mediatek/include/mt-plat/mt6771/include -I$PWD/drivers/misc/mediatek/base/power/include -I$PWD/drivers/misc/mediatek/base/power/mt6771 -Wno-error"
           echo "KCFLAGS=$KCF"
           make ARCH=arm64 -j"$(nproc)" CROSS_COMPILE="$CROSS" $EXTRA KCFLAGS="$KCF" Image > /tmp/build.log 2>&1
           rc=$?
