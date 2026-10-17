@@ -1,6 +1,3 @@
-# yxp_u39_kvm_defconfig
-# 由原厂 /proc/config.gz 派生，仅含 3 处改动（见文件尾注释）
-# 设备: 优学派 U39 / MT8788 / mt6771 平台 / kernel 4.4.146
 #
 # Automatically generated file; DO NOT EDIT.
 # Linux/arm64 4.4.146 Kernel Configuration
@@ -3758,7 +3755,7 @@ CONFIG_PM_DEVFREQ=y
 #
 # DEVFREQ Drivers
 #
-CONFIG_MTK_QOS_SUPPORT=y
+# CONFIG_MTK_QOS_SUPPORT is not set
 # CONFIG_PM_DEVFREQ_EVENT is not set
 # CONFIG_EXTCON is not set
 # CONFIG_MEMORY is not set
@@ -4191,8 +4188,8 @@ CONFIG_NLS_ISO8859_1=y
 CONFIG_NLS_UTF8=y
 # CONFIG_DLM is not set
 CONFIG_VIRTUALIZATION=y
-CONFIG_KVM=y
 CONFIG_KVM_ARM_MAX_VCPUS=8
+CONFIG_KVM=y
 
 #
 # Kernel hacking
@@ -4667,8 +4664,3 @@ CONFIG_FONT_8x16=y
 CONFIG_FONT_AUTOSELECT=y
 # CONFIG_SG_SPLIT is not set
 CONFIG_ARCH_HAS_SG_CHAIN=y
-
-# ---- KVM 改动清单 ----
-# HARDEN_BRANCH_PREDICTOR: y -> not set (KVM 依赖 !HARDEN_BRANCH_PREDICTOR)
-# VIRTUALIZATION: not set -> y
-# KVM/KVM_ARM_MAX_VCPUS: 新增
