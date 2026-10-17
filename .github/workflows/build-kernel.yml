@@ -19,8 +19,6 @@ on:
         options:
           - clang-4691093
           - gcc-aarch64
-  push:
-    branches: [ main ]
 
 concurrency:
   group: build-${{ github.ref }}
