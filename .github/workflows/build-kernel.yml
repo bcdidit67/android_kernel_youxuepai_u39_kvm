@@ -116,7 +116,19 @@ jobs:
             clang4691093)  CROSS="aarch64-linux-gnu-"; EXTRA="CC=clang CLANG_TRIPLE=aarch64-linux-gnu-" ;;
             gcc-aarch64)   CROSS="aarch64-linux-gnu-"; EXTRA="" ;;
           esac
-          make ARCH=arm64 -j"$(nproc)" CROSS_COMPILE="$CROSS" $EXTRA Image 2>&1 | tail -120
+          set +e
+          make ARCH=arm64 -j"$(nproc)" CROSS_COMPILE="$CROSS" $EXTRA Image > /tmp/build.log 2>&1
+          rc=$?
+          set -e
+          echo "make exit code: $rc ; log lines: $(wc -l < /tmp/build.log)"
+          if [ "$rc" != "0" ]; then
+            echo '=================== 错误摘要 ==================='
+            grep -nE 'error:|Error [0-9]|fatal error|No rule to make target|undefined reference' /tmp/build.log | head -40 || true
+            echo '=================== 日志末尾 120 行 ==================='
+            tail -120 /tmp/build.log
+            exit "$rc"
+          fi
+          tail -20 /tmp/build.log
 
       - name: 产物自检
         working-directory: kernel
