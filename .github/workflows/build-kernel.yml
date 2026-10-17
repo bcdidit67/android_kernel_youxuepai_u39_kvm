@@ -126,7 +126,7 @@ jobs:
           esac
           echo "CROSS_COMPILE=$CROSS"
           if [ "$KCONFIG" = "donor_k71v1_kvm" ]; then
-            make ARCH=arm64 CROSS_COMPILE="$CROSS" k71v1_64_bsp_defconfig
+            make ARCH=arm64 CROSS_COMPILE="$CROSS" oppo6771_18611_defconfig
             ./scripts/config --file .config -e VIRTUALIZATION -e KVM -e MODVERSIONS \
               -d HARDEN_BRANCH_PREDICTOR --set-str LOCALVERSION ""
             make ARCH=arm64 CROSS_COMPILE="$CROSS" olddefconfig
