@@ -81,3 +81,39 @@ workspace: /storage/emulated/0/AI/kvm_work/
 ```
 
 编译机：`/root/build_gcc.sh`（OPPO 配置）、`/root/build_yxp.sh`（本机配置）、`/root/k`（内核树，补丁已固化）、`/root/k_mtkinc`（头文件 farm）。
+
+## 八、EL2 / KVM 实测结论（2026-10-20，已确认）
+
+刷入 `boot_kvm_oppo.img` 后：首屏花屏（屏驱动不匹配）→ 黑屏 → 自动重启。刷回原厂 boot 后，从 **`expdb` 分区**里完整取回了探针内核的启动日志（`logs/probe1_kernel_log.txt`）。
+
+**关键证据（同一段连续日志内）：**
+
+```
+CPU features: detected feature: GIC system register CPU interface
+CPU: All CPU(s) started at EL2
+...
+kvm [1]: GICv3: no GICV resource entry
+kvm [1]: disabling GICv2 emulation
+kvm [1]: interrupt-controller@ffffff8008d9eec0 IRQ15
+kvm [1]: timer IRQ3
+kvm [1]: Hyp mode initialized successfully
+```
+
+结论：
+
+1. **本机内核运行在 EL2**，`HCR_EL2` 可用 → KVM 的硬件前提成立
+2. **KVM Hyp stub 初始化成功**，vGICv3（GIC system register CPU interface）已接上，GICv2 模拟被正确关闭
+3. 不是崩溃内核：日志一路推进到 `init`、`logd`、**`surfaceflinger` 与 `bootanim` 通信**，即 Android 框架已近乎启动，之后才重启
+4. `ramoops: attached 0xe0000@0x54410000` —— pstore 也已就绪
+
+**尚未验证**：`/dev/kvm` 节点与真正跑起 guest（因为系统在到达 adb 前就重启了）。
+
+### 剩余缺口（要变成"能日常用的 KVM 平板"）
+
+| 缺口 | 原因 | 出路 |
+|---|---|---|
+| 屏幕 / 触控 | donor 树里没有 `dg10132004_40c_wuxga_dsi_vdo` / `lq079l1sx01_qxga_dsi` 两个屏的驱动源码 | 只能靠厂商 GPL 源码 |
+| 充电 / 电量计 | OPPO 充电框架引用高通 `qpnp-adc.h`，MTK 路径不同 | 同上 |
+| Wi-Fi / BT / GPS | 厂商预编译 `.ko`（`wlan_drv_gen3` 等）的 MODVERSIONS CRC 可能与新内核不匹配 | 若拿到源码可整编；否则可尝试关 `MODVERSIONS` |
+
+**唯一能拿到 100% 匹配源码的正规途径：向优学派（yxp）索取 GPL 源码包**，关键字：机型 U39 / `CONFIG_ARCH_MTK_PROJECT="yxp_738_pad"` / `Linux 4.4.146`（构建时间 2023-03-01，`release@yxp`）。
