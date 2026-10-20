@@ -1,0 +1,1171 @@
+root@localhost) (gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC)) #2 SMP PREEMPT Sun Oct 18 13:56:28 UTC 2026
+Boot CPU: AArch64 Processor [410fd034]
+mrdump_get_cb: mrdump_cbaddr=0x000000000011e000, mrdump_cbsize=0x0000000000002000
+&[PHY layout]mblock-13-ccci   :   0x8c000000 - 0x8fffffff (0x4000000)
+&[PHY layout]mblock-12-SCP-reserved   :   0x9cf00000 - 0x9d4fffff (0x600000)
+&[PHY layout]mblock-11-SPM-reserved   :   0x77ff0000 - 0x77ffffff (0x10000)
+&[PHY layout]mblock-10-vpu_binary   :   0x9d5f0000 - 0x9fffffff (0x2a10000)
+&[PHY layout]mblock-9-framebuffer   :   0x7dfe0000 - 0x7fefffff (0x1f20000)
+&[PHY layout]mblock-7-lk_addr_mb   :   0x56000000 - 0x563fffff (0x400000)
+&[PHY layout]mblock-5-SSPM-reserved   :   0x7ff00000 - 0x7ffbffff (0xc0000)
+&[PHY layout]mblock-4-atf-log-reserved   :   0xbfe00000 - 0xbfe3ffff (0x40000)
+&[PHY layout]mblock-3-atf-reserved   :   0x54600000 - 0x5463ffff (0x40000)
+&[PHY layout]mblock-1-dramc-rk0   :   0x13ffff000 - 0x13fffffff (0x1000)
+[dram_dummy_read_reserve_mem_of_init] dram_rank0_addr = 0x0000000077fef000, size = 0x1000
+Reserved memory: initialized node reserve-memory-dram_r0_dummy_read, compatible id reserve-memory-dram_r0_dummy_read
+&ZMC: zmc_memory_init, name: zone-movable-cma-memory, base: 0x00000000c0000000, size: 0x000000007fc00000
+memory-ssvp: setup_feature_size, can't find DT node, memory-ssmr-features
+memory-ssvp: setup_feature_size, rmem->size: 0x000000007fc00000
+memory-ssvp: setup_feature_size, svp-size: 0x0000000000000000
+memory-ssvp: finalize_region_size, svp_region: 0x0000000000000000
+memory-ssvp: ssvp_preinit, total target size: 0x0000000000000000
+memory-ssvp: ssvp_preinit, SSVP initialization: skipped, no SSVP requirements
+memory-lowpower: zmc_memory_lowpower_init: memory-lowpower-fullness
+&memory-lowpower: memory_lowpower_fullness, success to grab the "last pageblock"
+Reserved memory: initialized node zone-movable-cma-memory, compatible id mediatek,zone_movable_cma
+&[PHY layout]reserve-memory-scp_share   :   0x8a000000 - 0x8b3fffff (0x1400000)
+Reserved memory: initialized node reserve-memory-scp_share, compatible id mediatek,reserve-memory-scp_share
+&[PHY layout]consys-reserve-memory   :   0xbfc00000 - 0xbfdfffff (0x200000)
+[CONNADP]reserve_memory_consys_fn: name: consys-reserve-memory, base: 0xbfc00000, size: 0x200000
+Reserved memory: initialized node consys-reserve-memory, compatible id mediatek,consys-reserve-memory
+&[PHY layout]reserve-memory-sspm_share   :   0x9c9f0000 - 0x9cefffff (0x510000)
+Reserved memory: initialized node reserve-memory-sspm_share, compatible id mediatek,reserve-memory-sspm_share
+[memblock]mediatek,ram_console: 0x54400000 - 0x54410000 (0x10000)
+Reserved memory: initialized node ram_console-reserved-memory@54400000, compatible id mediatek,ram_console
+[memblock]mediatek,pstore: 0x54410000 - 0x544f0000 (0xe0000)
+Reserved memory: initialized node pstore-reserved-memory@54410000, compatible id mediatek,pstore
+[memblock]mediatek,minirdump: 0x544f0000 - 0x54500000 (0x10000)
+Reserved memory: initialized node minirdump-reserved-memory@544f0000, compatible id mediatek,minirdump
+&[PHY layout]kernel   :   0x40000000 - 0x545fffff (0x14600000)
+&[PHY layout]kernel   :   0x54640000 - 0x55ffffff (0x19c0000)
+&[PHY layout]kernel   :   0x56400000 - 0x77feffff (0x21bf0000)
+&[PHY layout]kernel   :   0x78000000 - 0x7dfdffff (0x5fe0000)
+&[PHY layout]kernel   :   0x7ffc0000 - 0x89ffffff (0xa040000)
+&[PHY layout]kernel   :   0x8b400000 - 0x8bffffff (0xc00000)
+&[PHY layout]kernel   :   0x90000000 - 0x9c9effff (0xc9f0000)
+&[PHY layout]kernel   :   0x9d500000 - 0x9d5effff (0xf0000)
+&[PHY layout]kernel   :   0xa0000000 - 0xbfbfffff (0x1fc00000)
+&[PHY layout]kernel   :   0xbfe40000 - 0x13fffefff (0x801bf000)
+On node 0 totalpages: 1003631
+  DMA zone: 7490 pages used for memmap
+  DMA zone: 0 pages reserved
+  DMA zone: 479344 pages, LIFO batch:31
+  Normal zone: 8192 pages used for memmap
+  Normal zone: 524287 pages, LIFO batch:31
+psci: probing for conduit method from DT.
+psci: PSCIv1.0 detected in firmware.
+psci: Using standard PSCI v0.2 function IDs
+psci: MIGRATE_INFO_TYPE not supported.
+psci: SMC Calling Convention v1.1
+PERCPU: Embedded 22 pages/cpu @ffffffc07fe71000 s50008 r8192 d31912 u90112
+pcpu-alloc: s50008 r8192 d31912 u90112 alloc=22*4096
+pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+CPU features: enabling workaround for ARM errata 855873
+CPU features: enabling workaround for ARM erratum 845719
+CPU features: enabling workaround for ARM erratum 855872
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 987949
+[cpu_ntf] <00>ffffff80081d2df0 (page_alloc_cpu_notify)
+Kernel command line: console=tty0 console=ttyS0,921600n1 vmalloc=496M slub_max_order=0 slub_debug=OFZPU androidboot.hardware=mt6771 firmware_class.path=/vendor/firmware loop.max_part=7 has_battery_removed=1 maxcpus=8 androidboot.verifiedbootstate=orange skip_initramfs rootwait ro init=/init root=PARTUUID=a4da8f1b-fe07-433b-95cb-84a5f23e477b androidboot.veritymode=enforcing bootopt=64S3,32N2,64N2 buildvariant=userdebug androidboot.atm=disabled androidboot.meta_log_disable=0 androidboot.dtbo_idx=0 androidboot.noah_soc=MT8788 printk.disable_uart=0 bootprof.pl_t=6419 bootprof.lk_t=2575 bootprof.logo_t=1179 boot_reason=4 androidboot.serialno=7090123456789ABCDEF androidboot.bootreason=reboot gpt=1 usb2jtag_mode=0 mrdump_ddrsv=yes mrdump_cb=0x11e000,0x2000 mrdump.lk=MRDUMP08
+PID hash table entries: 4096 (order: 3, 32768 bytes)
+Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+software IO TLB: mapped [mem 0xbb5c0000-0xbb600000] (0MB)
+Memory: 1804392K/4014524K available (13384K kernel code, 2002K rwdata, 7928K rodata, 5588K init, 6161K bss, 117076K reserved, 2093056K cma-reserved)
+Virtual kernel memory layout:
+    modules : 0xffffff8000000000 - 0xffffff8008000000   (   128 MB)
+    vmalloc : 0xffffff8008000000 - 0xffffffbdbfff0000   (   246 GB)
+      .init : 0xffffff8009557000 - 0xffffff8009acc000   (  5588 KB)
+      .text : 0xffffff8008080000 - 0xffffff8008d93000   ( 13388 KB)
+    .rodata : 0xffffff8008d93000 - 0xffffff8009557000   (  7952 KB)
+      .data : 0xffffff8009acc000 - 0xffffff8009cc0a48   (  2003 KB)
+    vmemmap : 0xffffffbdc0000000 - 0xffffffbfc0000000   (     8 GB maximum)
+              0xffffffbdc0000000 - 0xffffffbdc3ffffc0   (    63 MB actual)
+    fixed   : 0xffffffbffe7fb000 - 0xffffffbffec00000   (  4116 KB)
+    PCI I/O : 0xffffffbffee00000 - 0xffffffbfffe00000   (    16 MB)
+    memory  : 0xffffffc000000000 - 0xffffffc0fffff000   (  4095 MB)
+[cpu_ntf] <00>ffffff8008216740 (slab_cpuup_callback)
+SLUB: HWalign=64, Order=0-0, MinObjects=0, CPUs=8, Nodes=1
+[cpu_ntf] <00>ffffff800811ce04 (sched_ilb_notifier)
+Initializing HMP scheduler:
+Preemptible hierarchical RCU implementation.
+	Build-time adjustment of leaf fanout to 64.
+[cpu_ntf] <00>ffffff8008148820 (rcu_cpu_notify)
+**********************************************************
+**   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+**                                                      **
+** trace_printk() being used. Allocating extra memory.  **
+**                                                      **
+** This means that this is a DEBUG kernel and it is     **
+** unsafe for production use.                           **
+**                                                      **
+** If you see this message and you are not debugging    **
+** the kernel, report this immediately to your vendor!  **
+**                                                      **
+**   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+**********************************************************
+[cpu_ntf] <00>ffffff80083db540 (radix_tree_callback)
+NR_IRQS:64 nr_irqs:64 0
+GIC: Using split EOI/Deactivate mode
+[cpu_ntf] <00>ffffff800840cef0 (gic_secondary_init)
+### gic-v3 init done. ###
+[cpu_ntf] <00>ffffff80084de328 (gic_sched_hotplug_callback)
+### gic-v3 scheduled pm init done ###
+[cpu_ntf] <00>ffffff80081512e8 (timer_cpu_notify)
+[cpu_ntf] <00>ffffff8008153a2c (hrtimer_cpu_notify)
+fmtk_infracfg_ao_init: infra mfg debug: 050000f2
+arch_timer_init:arch_timer_rate(0xc65d40),PHYS_SECURE_PPI=1,PHYS_NONSECURE_PPI=2,VIRT_PPI=3,HYP_PPI=4
+arch_timer_init:arch_timer_c3stop=1
+arch_timer_register:arch_timer_rate(0xc65d40),arch_timer_use_virtual=0
+arch_timer_register:request_percpu_irq PHYS_SECURE_PPI err=0
+arch_timer_register:request_percpu_irq PHYS_NONSECURE_PPI err=0
+[cpu_ntf] <00>ffffff8008a0a8a0 (arch_timer_cpu_notify)
+Architected cp15 timer(s) running at 13.00MHz (phys).
+clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x2ff89eacb, max_idle_ns: 440795202429 ns
+sched_clock: 56 bits at 13MHz, resolution 76ns, wraps every 4398046511101ns
+[mtk_gpt] base=0xffffff800a2e6000, irq=5
+[mtk_gpt] gpt1, base=0xffffff800a2e6010
+[mtk_gpt] gpt2, base=0xffffff800a2e6020
+[mtk_gpt] gpt3, base=0xffffff800a2e6030
+[mtk_gpt] gpt4, base=0xffffff800a2e6040
+[mtk_gpt] gpt5, base=0xffffff800a2e6050
+[mtk_gpt] gpt6, base=0xffffff800a2e6060
+[mtk_gpt] gpt1: clkdiv=1, cmp=128, hz=250, freq=32000
+[mtk_gpt] acao clkevt, freq=32000
+[cpu_ntf] <00>ffffff80081696a0 (hotplug_cfd)~
+fram_console: buffer start: 0xffffff800a2e8000, size: 0x800
+fpmic & external buck: 0x0
+fram_console: CPU notifier status: 0, 0, 0x0, 0
+fram_console: CPU HPS footprint: 0, 0x0, 0, 05
+fram_console: last init function: 0x0
+Calibrating delay loop (skipped), value calculated using timer frequency.. 26.00 BogoMIPS (lpj=52000)
+pid_max: default: 32768 minimum: 301
+[cpu_ntf] <00>ffffff800825d220 (buffer_cpu_notify)
+Security Framework initialized
+SELinux:  Initializing.
+SELinux:  Starting in permissive mode
+Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[cpu_ntf] <00>ffffff80081d9140 (ratelimit_handler)
+Initializing cgroup subsys freezer
+Initializing cgroup subsys debugW
+[cpu_ntf] <00>ffffff80080c13cc (smpboot_thread_call)/2 
+init_heavy_tlb start.
+init_heavy_tlb: cpu=0 thresh_l=2147483647 thresh_h=201 max_capaicy=577
+init_heavy_tlb: cpu=1 thresh_l=2147483647 thresh_h=201 max_capaicy=577
+init_heavy_tlb: cpu=2 thresh_l=2147483647 thresh_h=201 max_capaicy=577
+init_heavy_tlb: cpu=3 thresh_l=2147483647 thresh_h=201 max_capaicy=577
+init_heavy_tlb: cpu=4 thresh_l=201 thresh_h=2147483647 max_capaicy=1024
+init_heavy_tlb: cpu=5 thresh_l=201 thresh_h=2147483647 max_capaicy=1024
+init_heavy_tlb: cpu=6 thresh_l=201 thresh_h=2147483647 max_capaicy=1024
+init_heavy_tlb: cpu=7 thresh_l=201 thresh_h=2147483647 max_capaicy=1024
+ASID allocator initialised with 32768 entries
+[cpu_ntf] <00>ffffff80080c7608 (cpu_callback)
+[cpu_ntf] <00>ffffff80080e146c (workqueue_cpu_up_callback)
+[cpu_ntf] <00>ffffff80080e17e0 (workqueue_cpu_down_callback)
+[cpu_ntf] <00>ffffff80080fb340 (migration_call)
+[cpu_ntf] <00>ffffff80080f6940 (sched_cpu_active)
+[cpu_ntf] <00>ffffff80080f56e8 (sched_cpu_inactive)
+[cpu_ntf] <00>ffffff80081b6980 (hotplug_event_notify)
+[cpu_ntf] <00>ffffff80084a70f0 (cpu_hotplug_cb_notifier);Yv
+BOOTPROF:        24.532614: ON
+&init_get_max_DRAM_size done. phone_dram_sz: 0x100000000, kernel_mem_sz: 0x100000000
+ftag_devinfo_data size:200, HRID size:4
+f[devinfo][SegCode] Segment Code=0x14!Bz
+log_store: sram header address 0xffffff800a2eaf00.
+log_store log buff addr:0x41ccaccc, size 0x80000. buff flag 0x427.
+sig 0x5678ef90 flag 0x427 add 0x7ffc0000 size 0x40000 offsize 0x20 point 0x19ee6
+]f
+CPU features: Unsupported CPU feature variation detected.
+Brought up 8 CPUs
+SMP: Total of 8 processors activated.
+CPU features: detected feature: GIC system register CPU interface
+CPU: All CPU(s) started at EL2
+alternatives: patching kernel code
+[cpu_ntf] <00>ffffff80080ec568 (sched_domains_numa_masks_update)
+[cpu_ntf] <00>ffffff80080fff80 (cpuset_cpu_active)
+[cpu_ntf] <00>ffffff80080fffec (cpuset_cpu_inactive)
+[cpu_ntf] <00>ffffff80080f5cc0 (hotplug_hrtick)
+[cpu_ntf] <00>ffffff8008463e08 (device_hotplug_notifier)5
+&[PHY layout]tee_reserved_mem   :   0xbfe00000 - 0xbfe3ffff (0x40000)"
+&[debug]available DRAM size = 0x100000000
+[PHY layout]FB (dt) :  0x7dfe0000 - 0x7fefffff  (0x1f20000)
+oppo create systeminto node suscess!
+&
+ register_restart_handler- 0xffffff800a281650, Notify call: - 0xffffff8008ab071c
+&ARCH_RESET register mtk_restart_handler  ok!!!!
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+futex hash table entries: 2048 (order: 5, 131072 bytes)
+BOOTPROF:        93.849153:initcall: cma_init_reserved_areas    28.535846ms
+pinctrl core: initialized pinctrl subsystem
+init_project_version start
+init_project_version error1
+[PLAT DBG INFO] 0xd8a3: 0x11d80c(ffffff800a2ec80c), 64
+[PLAT DBG INFO] 0xe31c: 0x11d84c(ffffff800a2ee84c), 24
+[PLAT DBG INFO] 0x0: 0x0(          (null)), 0
+mtk_wdt_get_base_addr: compatible node found: toprgu
+NET: Registered protocol family 16
+ramoops: using module parameters@
+framoops: pstore:address is 0x54410000, size is 0xe0000, console_size is 0x40000, pmsg_size is 0x10000
+console [pstore-1] enabled
+pstore: Registered ramoops as persistent store backend
+ramoops: attached 0xe0000@0x54410000, ecc: 0/0
+[EMI] dram_type(3)
+[EMI] ch_num(2)
+[EMI] rk_num(1)
+[EMI] rank0_size(0x20)
+[PWRAP] mt_pwrap_init++++
+[PWRAP] PWRAP reg: 0xffffff800a3e4000,  irq: 6
+[PWRAP] is_pwrap_init_done 1
+[PWRAP] mt_pwrap_init----
+[DRAMC] dram info dram rank number = 1
+[DRAMC] dram info dram rank0 base = 0x77fef000
+[DRAMC]find dt_scan_dram_info
+mtk_wdt_init ok
+cpuidle: using governor menu
+cpuidle: using governor mtk_menu
+fPower/swap IDLE BLOCKING INFO SETTING FAIL (type:3)
+vdso: 2 pages (1 code @ ffffff8008d99000, 1 data @ ffffff8009ad1000)
+hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+DMA: preallocated 256 KiB pool for atomic allocations
+[Power/PPM] @ppm_main_data_init: cluster_num = 2
+[Power/PPM] @ppm_main_data_init: ppm cluster 0 -> core_num = 4, cpu_id = 0
+[Power/PPM] @ppm_main_data_init: ppm cluster 1 -> core_num = 4, cpu_id = 4
+[Power/PPM] @ppm_main_data_init: done!
+[Power/PPM] @ppm_main_pdrv_probe: ppm probe done!
+[Power/PPM] ppm_profile_init done
+[Power/PPM] ppm driver init done!
+### CIRQ init done. ###
+[DISP]init_log_buffer success
+[mmdvfs]mmdvfs_pmqos_init
+
+ MTK_SIP_KERNEL_WDT - 0xffffff8008850140
+
+ atf_aee_debug_virt_addr = 0xffffff800a6c8000
+mrdump_cblock_init: done.
+mrdump_hw_enable: mrdump enabled!
+mrdump_platform_init: done.
+&mrdump_wd_dram_reserved_mode: DDR Reserved Mode ready or not? (yes)
+mtk_wdt_swsysret_config: before set wdt_sys_val =0
+mtk_wdt_swsysret_config: after set wdt_sys_val =0,wdt_sys_val=88000000
+mtk_rgu_dram_reserved: MTK_WDT_MODE(0xfd)
+&mrdump_wd_dram_reserved_mode: DDR reserved mode enabled
+mrdump_hw_init: init_done.
+mirdump: reserved 544f0000+3000->ffffff800a6cd000
+mtk pinctrl probe
+mtk_pctrl_init------ ok
+SSPM is ready to service IPIlm9
+mtk wdt driver probe ..
+wdt_sspm_irq_id is not foundc
+failed to get interrupts in mrdump_ext_rst-eint node
+ext_debugkey_eint=-1
+[EMI] module probe.
+[EMI] get CEN_EMI_BASE @ ffffff800a6fc000
+[EMI] get EMI_MPU_BASE @ ffffff800a6fe000
+[EMI] get CH0_EMI_BASE @ ffffff800a712000
+[EMI] get CH1_EMI_BASE @ ffffff800a714000
+[ELM] initialize EMI ELMv2
+[DRAMC] module probe.
+[DRAMC]get DRAMC_AO_CHA_BASE_ADDR @ ffffff800a718000[u
+[DRAMC]get DRAMC_AO_CHB_BASE_ADDR @ ffffff800a71c000|
+[DRAMC]get DDRPHY_AO_CHA_BASE_ADDR @ ffffff800a724000
+[DRAMC]get DDRPHY_AO_CHB_BASE_ADDR @ ffffff800a728000
+[DRAMC]get DRAMC_NAO_CHA_BASE_ADDR @ ffffff800a720000
+[DRAMC]get DRAMC_NAO_CHB_BASE_ADDR @ ffffff800a722000
+[DRAMC]get DDRPHY_NAO_CHA_BASE_ADDR @ ffffff800a72c000
+[DRAMC]get DDRPHY_NAO_CHB_BASE_ADDR @ ffffff800a72e000
+[DRAMC]get SLEEP_BASE_ADDR @ ffffff800a730000
+[DRAMC]get SYS_TIMER_BASE_ADDR @ ffffff800a732000
+[DRAMC Driver] dram type =3
+[DRAMC Driver] Channel num =2
+[DRAMC Driver] cbt mode =0
+[DRAMC Driver] Dram Data Rate = 2400
+[DRAMC Driver] shuffle_status = 0
+[DRAMC Driver] dram can support DFS
+disp driver(1) disp_probe begin
+disp driver(1) disp_probe end
+MMP: mmprofile_enable(): enable: 1
+MMP: mmprofile_force_start(): start: 1
+[mmdvfs]vcore_steps: [0, 1, 0, 0, 0, 0], count:2"
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_mmpll_d7_ckZ
+[mmdvfs]mm_step0: 450MHz, clk:1/0/6
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_univpll_d2_d2_ck
+[mmdvfs]mm_step1: 312MHz, clk:1/0/7
+[mmdvfs]disp_freq: step size:2
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_mmpll_d7_ckI
+[mmdvfs]mm_step0: 450MHz, clk:1/0/6
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_univpll_d2_d2_ck
+[mmdvfs]mm_step1: 312MHz, clk:1/0/7
+[mmdvfs]mdp_freq: step size:2
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_mmpll_d7_ck
+[mmdvfs]mm_step0: 450MHz, clk:1/0/6
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_univpll_d2_d2_ck
+[mmdvfs]mm_step1: 312MHz, clk:1/0/7
+[mmdvfs]vdec_freq: step size:2
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_mmpll_d7_ck
+[mmdvfs]mm_step0: 450MHz, clk:1/0/6
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_mm_sel
+[mmdvfs]Get module clock: mmdvfs_clk_univpll_d2_d2_ck
+[mmdvfs]mm_step1: 312MHz, clk:1/0/7
+[mmdvfs]venc_freq: step size:2
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_img_sel
+[mmdvfs]Get module clock: mmdvfs_clk_mmpll_d6_ck
+[mmdvfs]img_step0: 525MHz, clk:1/2/5t
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_img_sel
+[mmdvfs]Get module clock: mmdvfs_clk_syspll_d3_ck
+[mmdvfs]img_step1: 364MHz, clk:1/2/4
+[mmdvfs]img_freq: step size:2
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_cam_sel|
+[mmdvfs]Get module clock: mmdvfs_clk_syspll_d2_ck
+[mmdvfs]cam_step0: 546MHz, clk:1/1/3A
+[mmdvfs]Get module clock: mmdvfs_clk_mux_top_cam_sel
+[mmdvfs]Get module clock: mmdvfs_clk_syspll_d3_ck
+[mmdvfs]cam_step1: 364MHz, clk:1/1/4\
+[mmdvfs]cam_freq: step size:2
+BOOTPROF:       152.928769:initcall: arm64_device_init    35.469077ms
+[pid=1]g_mmdvfs_step_util init with lp4 2-ch
+[pid=1]g_mmdvfs_step_util init
+[cpu_ntf] <00>ffffff80083bb8c8 (blk_cpu_notify)
+[cpu_ntf] <00>ffffff80083bbf80 (blk_iopoll_cpu_notify)
+[cpu_ntf] <00>ffffff80083c2900 (blk_mq_main_cpu_notify)
+[cpu_ntf] <00>ffffff80083bd2a0 (blk_mq_queue_reinit_notify)
+[M4U][ERR] 4G DRAM Mode is: 0
+[M4U][ERR] protect memory va=0xffffffc03c765e00, pa=0x7c765e00.
+[M4U][ERR] m4u_reg_init, ProtectPA = 0x7c765e00
+[M4U][ERR] m4u write all port domain to 4
+[M4U][ERR] m4u write all port domain to 4
+[M4U][ERR] m4u write all port domain to 4
+[M4U][ERR] m4u write all port domain to 4
+[M4U][ERR] m4u write all port domain to 4
+[M4U][ERR] m4u write all port domain to 4
+[M4U][ERR] m4u write all port domain to 4
+[M4U][ERR] m4u hw init id = 0, base address: 0xffffff800a760000, pgd_pa: 0x7c7a8000
+[M4U][ERR] m4u inorder setting: 0x0
+[M4U][ERR] request_irq, irq_num=259
+mau_start_monitor [0], start=0x0, end=0xfffff, write: 1, port_mask=0xffffffff, larb_mask=0xffffffff
+mau_start_monitor [1], start=0x0, end=0xfffff, write: 0, port_mask=0xffffffff, larb_mask=0xffffffff
+m4u_config_port: MDP_RDMA0, m4u_tee_en:0, mmu_en: 0 -> 1, sec_en:0 -> 0
+m4u_config_port: MDP_WROT0, m4u_tee_en:0, mmu_en: 0 -> 1, sec_en:0 -> 0
+MMP: mmprofile_enable(): enable: 1
+MMP: mmprofile_force_start(): start: 1
+[M4U][ERR] m4u register fb_notifier OK!
+MMP: mmprofile_enable(): enable: 1
+MMP: mmprofile_force_start(): start: 1
+[ccci0/util]opt_md2_support using default
+[ccci0/util]opt_md5_support using default
+[ccci0/util]opt_irat_support using default
+[ccci0/util]load smem layout fail
+[ccci0/util]Using default META MD setting[0][0]
+[SCP] register scp A notify callback..
+f[CONN-MD-DFT][I]conn_md_init:init message queue list succeed
+f[CONN-MD-DFT][I]conn_md_init:init active queue list succeed
+f[CONN-MD-DFT][I]conn_md_init:init user information list succeed
+f[CONN_MD_DMP][I]conn_md_dmp_init:alloc memory for msg log system done, size:0x00000430
+f[CONN-MD-DFT][I]conn_md_init:conn_md_dmp_init succeed
+f[CONN-MD-DFT][I]conn_md_init:create conn_md_thread succeed, wakeup it
+[TMEM]trusted_mem_subsys_init:307
+[TMEM]trusted_mem_subsys_init:318 (end)
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hubt=
+usbcore: registered new device driver usb
+USB_FIXME, <usb_phy_gen_create_phy(), 227> ORG
+USB_FIXME, <usb_phy_gen_create_phy(), 233> ORG, err<0>
+usbphy supply vcc not found, using dummy regulator
+mt-charger-det: probe of mt_charger failed with error 1
+f[OPPO_CHG][oppo_short_ic_subsys_init] init start
+f[OPPO_CHG][oppo_short_ic_subsys_init] Success to register oppo_short_ic i2c driver.
+f[OPPO_CHG][n76e_subsys_init] init start
+f[OPPO_CHG][n76e_subsys_init] Success to register n76e i2c driver.
+f[OPPO_CHG][stm8s_subsys_init] init start
+f[OPPO_CHG][stm8s_subsys_init] Success to register stm8s i2c driver.
+f[OPPO_CHG][adapter_ic_init] success
+Advanced Linux Sound Architecture Driver Initialized.
+[cpu_ntf] <00>ffffff8008b9ba20 (dev_cpu_callback)
+[cpu_ntf] <00>ffffff80081306c0 (cpu_hotplug_handler)
+clocksource: Switched to clocksource arch_sys_counter
+[record_md_vosel] vmodem_vosel = 0x2c
+[PMIC_LP_INIT_SETTING] Chip Ver = 2
+[regulator_register] pass to register vdram1, min_uV:500000 max_uV:2087500
+[regulator_register] pass to register vcore, min_uV:500000 max_uV:1293750
+[regulator_register] pass to register vpa, min_uV:500000 max_uV:3650000
+[regulator_register] pass to register vproc11, min_uV:500000 max_uV:1293750
+[regulator_register] pass to register vproc12, min_uV:500000 max_uV:1293750
+[regulator_register] pass to register vgpu, min_uV:500000 max_uV:1293750gD
+[regulator_register] pass to register vs2, min_uV:500000 max_uV:2087500
+[regulator_register] pass to register vmodem, min_uV:500000 max_uV:1293750
+[regulator_register] pass to register vs1, min_uV:1000000 max_uV:2587500
+regulator ext_pmic2 enable
+regulator ext_pmic2 is_enabled
+****[mt6358_auxadc_init] VBIF28 = 2797, BAT TEMP = 740, MTS_ADC = 0x3737
+****[mt6358_auxadc_init] DONE, BAT TEMP = 740, MTS_ADC = 0x3737
+49 1622 0 0 1 0 0 0 1 1 106 64 64 4 4
+Get default car_tune_value= 1000
+Get default r_fg_value= 100
+Get default UNIT_FGCURRENT= 381470
+[lbat_service_init]
+[lbat_user_register] hv=3400, lv1=3250, lv2=3100T
+AUXADC_LBAT_VOLT_MAX = 0x0, AUXADC_LBAT_VOLT_MIN = 0x9a1, RG_INT_EN_BAT_H = 0, RG_INT_EN_BAT_L = 1
+AUXADC_LBAT_EN_MAX = 0, AUXADC_LBAT_IRQ_EN_MAX = 0, AUXADC_LBAT_EN_MIN = 1, AUXADC_LBAT_IRQ_EN_MIN = 1
+AUXADC_LBAT_DEBT_MAX=10, AUXADC_LBAT_DEBT_MIN=0
+[low_battery_protect_init] 3400 mV, 3250 mV, 3100 mV Done
+FG_CUR_HTH = 0xd293, FG_CUR_LTH = 0xca86, RG_INT_EN_FG_CUR_H = 0, RG_INT_EN_FG_CUR_L = 1
+[battery_oc_protect_init] 4670 mA, 5500 mA
+[battery_oc_protect_init] Done
+Create bat_percent_notify_thread : done
+Create dlpt_notify_thread : doneVU
+POWER_UVLO_VOLT_LEVEL = 2750, RG_UVLO_VTHL = 0x5
+BOOTPROF:       213.283923:probe: probe=platform_drv_probe drv=mt-pmic(ffffff8009b649e8)    16.566385ms
+BOOTPROF:       213.315076:initcall: pmic_mt_init    16.881000ms
+ pimix = 101Wz
+[BLOCK_TAG] DRAM: 0x0000000040000000 - 0x000000013ffff000, size: 0xfffff000
+f[ION]ion_init()
+f[ION]ion_drv_probe() heap_nr=13
+fion_heap_create: Heap type is disabled: 1
+fion_mtk_heap_create: error creating heap ion_system_contig_heap type 1 base 0 size 0
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+f[ION]ion_sec_heap_create enter ion_sec_heap_create
+MMP: mmprofile_enable(): enable: 1
+MMP: mmprofile_force_start(): start: 1
+f[ION]ion_init fd register notifer fail
+NET: Registered protocol family 2
+TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+TCP: Hash tables configured (established 32768 bind 32768)
+UDP hash table entries: 2048 (order: 4, 65536 bytes)
+UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+NET: Registered protocol family 1
+Freeing initrd memory: 416K
+[cpu_ntf] <00>ffffff8008a64388 (cpu_pmu_notify)
+hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available$
+kvm [1]: GICv3: no GICV resource entry
+kvm [1]: disabling GICv2 emulation
+kvm [1]: interrupt-controller@ffffff8008d9eec0 IRQ15
+kvm [1]: timer IRQ3
+kvm [1]: Hyp mode initialized successfully
+[cpu_ntf] <00>ffffff800809fdc4 (kvm_cpu_hotplug)
+fCan not create a netlink socket
+audit: initializing netlink subsys (disabled)
+audit: type=2000 audit(0.216:1): initialized
+Initialise system trusted keyring
+[cpu_ntf] <00>ffffff80081dfff0 (cpu_callback)
+VFS: Disk quotas dquot_6.6.0
+VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Registering sdcardfs 0.1
+fuse init (API version 7.23)
+exFAT: Version 1.2.9
+SELinux:  Registering netfilter hooks
+Key type asymmetric registered
+Asymmetric key parser 'x509' registered
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+io scheduler anxiety registered
+io scheduler maple registered
+io scheduler zen registered
+[cpu_ntf] <00>ffffff80084015e4 (percpu_counter_hotcpu_callback)
+Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+fboot_with_console: boot_mode = 0
+fboot_with_console: boot_mode = 0
+fboot_with_console: boot_mode = 0
+fboot_with_console: boot_mode = 0
+console [ttyS0] disabled@
+fboot_with_console: boot_mode = 0
+11002000.serial: ttyS0 at MMIO 0x11002000 (irq = 287, base_baud = 1625000) is a ST16650V2
+console [ttyS0] enabled
+mt6577-uart 11002000.serial: Unbalanced pm_runtime_enable!SUBSYSTEM=platform
+DEVICE=+platform:11002000.serial
+BOOTPROF:       607.388462:probe: probe=platform_drv_probe drv=mt6577-uart(ffffff8009b37df0)   377.906924ms
+fboot_with_console: boot_mode = 0O`Q$
+fboot_with_console: boot_mode = 0?CZ$
+fboot_with_console: boot_mode = 0
+11003000.serial: ttyS1 at MMIO 0x11003000 (irq = 288, base_baud = 1625000) is a ST16650V2
+mt6577-uart 11003000.serial: Unbalanced pm_runtime_enable!SUBSYSTEM=platform
+DEVICE=+platform:11003000.serial
+BOOTPROF:       632.589077:probe: probe=platform_drv_probe drv=mt6577-uart(ffffff8009b37df0)    23.827385ms
+fboot_with_console: boot_mode = 02
+fboot_with_console: boot_mode = 0
+fboot_with_console: boot_mode = 0
+11004000.serial: ttyS2 at MMIO 0x11004000 (irq = 289, base_baud = 1625000) is a ST16650V2
+mt6577-uart 11004000.serial: Unbalanced pm_runtime_enable!SUBSYSTEM=platform
+DEVICE=+platform:11004000.serial
+BOOTPROF:       657.761231:probe: probe=platform_drv_probe drv=mt6577-uart(ffffff8009b37df0)    23.810770ms
+BOOTPROF:       659.477231:initcall: mtk8250_platform_driver_init   430.321771msL
+[srandom] mod_init /dev/srandom driver registered..
+[srandom] mod_init /proc/srandom registion regisered..
+[srandom] mod_init Module version         : 1.38.0
+-----------------------:----------------------
+Please support my work and efforts contributing
+to the Linux community.  A $25 payment per
+server would be highly appreciated.
+-----------------------:----------------------
+Author                 : Jonathan Senkerik
+Website                : http://www.jintegrate.co
+github                 : http://github.com/josenk/srandom
+Paypal                 : josenk@jintegrate.co
+Bitcoin                : 1MTNg7SqcEWs5uwLKwNiAfYqBfnKFJu65p
+Commercial Invoice     : Avail on request.
+Unable to detect cache hierarchy for CPU 0
+loop: module loaded
+zram: Added device: zram0
+f[Power/spower] 4/5/0/7/7/1/2/
+F[PBM] feature_en: 1, pbm_drv_done: 0GLc(
+[register_low_battery_notify] prio_val=2
+[register_battery_percent_notify] prio_val=2
+[register_battery_oc_notify] prio_val=2
+[register_dlpt_notify] prio_val=0
+F[PBM] pbm_module_init : Done
+Power_gs: pmic_manual_dump array malloc done$U
+Power_gs: golden setting base_remap table malloc done
+------------[ cut here ]------------6
+WARNING: CPU: 6 PID: 1 at kernel/events/core.c:3358 perf_event_read_local+0x1c0/0x1e0()
+Modules linked in:
+CPU: 6 PID: 1 Comm: swapper/0 Tainted: G S              4.4.146 #2
+Hardware name: MT8788 (DT)
+Call trace:
+[<ffffff800808b320>] dump_backtrace+0x0/0x26c
+[<ffffff800808b5a0>] show_stack+0x14/0x1c
+[<ffffff80083d4888>] dump_stack+0xa8/0xe0
+[<ffffff80080c0dac>] warn_slowpath_common+0xa4/0x104\$#)
+[<ffffff80080c0f24>] warn_slowpath_null+0x1c/0x24
+[<ffffff80081c0be0>] perf_event_read_local+0x1c0/0x1e0
+[<ffffff80084b0004>] ppm_cpi_pmu_enable_locked+0x84/0x150
+[<ffffff80084b0178>] ppm_cpi_pmu_probe_cpu+0xa8/0x230
+[<ffffff80084b07f0>] ppm_cpi_pmu_probe+0x50/0xc0
+[<ffffff8009586a50>] ppm_cpi_init+0xb8/0x11ce
+[<ffffff8008082098>] do_one_initcall+0xd8/0x220
+[<ffffff8009557b70>] kernel_init_freeable+0x174/0x210
+[<ffffff8008d7d174>] kernel_init+0x10/0x11c
+[<ffffff8008085b60>] ret_from_fork+0x10/0x30B
+---[ end trace 96b41bd005417014 ]---
+[cpu_ntf] <00>ffffff80084b0400 (ppm_cpi_notifier)
+[Power/PPM] @ppm_cpi_init: CPI done! enable = 1
+BOOTPROF:       699.631539:initcall: ppm_cpi_init    16.077154ms
+[Power/PPM] @ppm_dlpt_policy_init: register PPM_POLICY_DLPT done!
+[Power/PPM] @ppm_sysboost_policy_init: register PPM_POLICY_SYS_BOOST done!
+[Power/PPM] @ppm_ptpod_policy_init: register PPM_POLICY_PTPOD done!
+[register_battery_percent_notify] prio_val=1
+[register_battery_oc_notify] prio_val=1
+[register_low_battery_notify] prio_val=1
+[Power/PPM] @ppm_pwrthro_policy_init: register PPM_POLICY_PWR_THRO done! 
+[Power/PPM] @ppm_thermal_policy_init: register PPM_POLICY_THERMAL done!
+[Power/PPM] @ppm_userlimit_policy_init: register PPM_POLICY_USER_LIMIT done!!86*
+[Power/PPM] @ppm_forcelimit_policy_init: register PPM_POLICY_FORCE_LIMIT done!
+[Power/PPM] @ppm_ut_policy_init: register PPM_POLICY_UT done!
+&MT_SCHED: Init complete, device major number = 245
+[cpu_ntf] <00>ffffff80084da5a8 (sched_cpu_notify)
+[MT AUXADC_probe3] get device tree info : start !!
+[AUXADC_AP] find node TEMPERATURE:0
+[AUXADC_AP] find node TEMPERATURE1:1z
+[AUXADC_AP] find node ADC_FDD_RF_PARAMS_DYNAMIC_CUSTOM_CH:2
+[MT AUXADC_AP] adc_channel_info_init : done !!
+fproc_create auxadc_debug_proc_fops
+pwm[mt_pwm_probe@ 1755]: +
+[PWM] get PWM1-main clock, ffffffc03b4863c0
+[PWM] get PWM2-main clock, ffffffc03b486440
+[PWM] get PWM3-main clock, ffffffc03b4864c0
+[PWM] get PWM4-main clock, ffffffc03b486540
+[PWM] get PWM-HCLK-main clock, ffffffc03b4865c0
+[PWM] get PWM-main clock, ffffffc03b486640
+ore Voltage to 600000uV passe
+SSHUB_vcore Expected sleep volt step = 16
+Set SSHUB_vcore sleep Voltage to 600000uV pass
+SSHUB_vsram_others Expected volt step = 56
+Set SSHUB_vsram_others Voltage to 850000uV pass
+SSHUB_vsram_others Expected sleep volt step = 56
+Set SSHUB_vsram_others sleep Voltage to 850000uV pass
+[SCP] sram base=0xffffff800be00000 80000
+[SCP] cfg base=0xffffff800bd60000
+[SCP] clkctrl base=0xffffff800bd64000
+size =524288
+[SCP] core_1 enable
+[SCP] scpreg.scpsys ffffff800bd660003j
+[SCP]scp_region_info=ffffff800be00400
+[SCP] platform init
+scp_rcv_obj[SCP_A_ID] = 0xffffff800be005c0
+scp_send_obj[SCP_A_ID] = 0xffffff800be006e0
+[SCP] ramdump init
+[SCP] ram_dump_init() done
+[SCP] sysfs init$h
+[SCP] request_irq
+[SCP] scp_reserve_memory_ioremap)
+[SCP] rsrv_phy_base = 0x8a000000, len:0x1400000
+[SCP] rsrv_vir_base = 0xffffff800c000000, len:0x1400000
+[SCP] [0] phys:0x8a000000, virt:0xffffff800c000000, len:0x1dc00
+[SCP] [1] phys:0x8a01dc00, virt:0xffffff800c01dc00, len:0x800000s5
+[SCP] [2] phys:0x8a81dc00, virt:0xffffff800c81dc00, len:0x1000
+[SCP] [3] phys:0x8a81ec00, virt:0xffffff800c81ec00, len:0x10
+91ec00, len:0x2000
+[SCP] [5] phys:0x8a920c00, virt:0xffffff800c920c00, len:0x200000 f
+[SCP] [6] phys:0x8ab20c00, virt:0xffffff800cb20c00, len:0x40000
+[SCP][rsrv_mem-0] phy:0x8a000000 - 0x8a01dbff, len:0x1dc00
+[SCP][rsrv_mem-0] vir:0xffffff800c000000 - 0xffffff800c01dbff, len:0x1dc00
+[SCP][rsrv_mem-1] phy:0x8a01dc00 - 0x8a81dbff, len:0x800000
+[SCP][rsrv_mem-1] vir:0xffffff800c01dc00 - 0xffffff800c81dbff, len:0x800000
+[SCP][rsrv_mem-2] phy:0x8a81dc00 - 0x8a81ebff, len:0x1000
+[SCP][rsrv_mem-2] vir:0xffffff800c81dc00 - 0xffffff800c81ebff, len:0x1000
+[SCP][rsrv_mem-3] phy:0x8a81ec00 - 0x8a91ebff, len:0x100000
+[SCP][rsrv_mem-3] vir:0xffffff800c81ec00 - 0xffffff800c91ebff, len:0x100000
+[SCP][rsrv_mem-4] phy:0x8a91ec00 - 0x8a920bff, len:0x2000
+[SCP][rsrv_mem-4] vir:0xffffff800c91ec00 - 0xffffff800c920bff, len:0x2000
+[SCP][rsrv_mem-5] phy:0x8a920c00 - 0x8ab20bff, len:0x200000
+[SCP][rsrv_mem-5] vir:0xffffff800c920c00 - 0xffffff800cb20bff, len:0x200000
+[SCP][rsrv_m
+en:0x40000
+[SCP] logger init
+[SCP]MPU protect SCP Share region<6:8a000000:8b3fffff> b6db6d, b6db6d
+[SCP]loader image mem:virt:0xffffff800bdf6000 - 0xffffff800bdf6430
+[SCP] reset scp A
+[SCP] reset scp doneT
+[SCP] regist
+r_interrupt_callback] register callback conflict intNo=44
+data]Start..
+[accdet_get_dts_data]mid-Key = 80, up_key = 220, down_key = 400
+[accdet_get_dts_data
+,<rawbulk_alloc_function 590>, rawbulk_alloc_function
+:logd.auditd]type=1400 audit(1792199491.346:14679): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[327:logd.auditd]type=1400 audit(1792199491.362:14680): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[327:logd.auditd]type=1400 audit(1792199491.378:14681): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[327:logd.auditd]type=1400 audit(1792199491.398:14682): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[327:logd.auditd]type=1400 audit(1792199491.414:14683): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.430:14684): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.446:14685): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[327:logd.auditd]type=1400 audit(1792199491.462:14686): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.478:14687): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.498:14688): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.514:14689): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.530:14690): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.546:14691): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.566:14692): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[327:logd.auditd]type=1400 audit(1792199491.582:14693): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.598:14694): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.614:14695): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+-(2)[1463:kworker/u16:9]mt6358_get_auxadc_value: 1 callbacks suppressed
+.(2)[1463:kworker/u16:9][mt6358_get_auxadc_value] ch_idx = 5, channel = 4, reg_val = 0x60e, adc_result = 681
+.(5)[327:logd.auditd]type=1400 audit(1792199491.630:14696): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.646:14697): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.666:14698): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[327:logd.auditd]type=1400 audit(1792199491.682:14699): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.698:14700): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.714:14701): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.730:14702): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.750:14703): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(2)[1069:usb ffs open]read descriptors
+.(2)[1069:usb ffs open]skip os descriptor, os_descs_count:2, len:119 all to 0
+.(2)[1069:usb ffs open]read strings
+.(4)[327:logd.auditd]type=1400 audit(1792199491.766:14704): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.782:14705): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.798:14706): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.814:14707): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199491.830:14708): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[268:charger_thread][mt6358_get_auxadc_value] ch_idx = 5, channel = 4, reg_val = 0x610, adc_result = 682
+.(0)[268:charger_thread][mt6358_get_auxadc_value] ch_idx = 0, channel = 0, reg_val = 0x5dc2, old_vbat = 3955, vthr = 682, adc_result = 3959
+.(0)[268:charger_thread][mt6358_get_auxadc_value] ch_idx = 1, channel = 2, reg_val = 0x4a6, adc_result = 522x]^6>
+.(0)[268:charger_thread][mt6358_get_auxadc_value] ch_idx = 2, channel = 3, bat_cur = 12928, reg_val = 0x2fa, adc_result = 669
+.(0)[268:charger_thread]Vbat=3959,Ibat=13267,I=0,VChr=4938,T=33,Soc=21:19,CT:4:4 hv:1 pd:0:0EY~6>
+.(0)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_get_adc: Select ADC channel to TEMP_JCSUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(0)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_get_adc: Start ADC conversionSUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(4)[327:logd.auditd]type=1400 audit(1792199491.850:14709): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[1:init]init: Service 'zygote' (pid 4765) received signal 9
+.(1)[1:init]init: Sending signal 9 to service 'zygote' (pid 4765) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 4765 in 0ms
+.(5)[327:logd.auditd]type=1400 audit(1792199491.866:14710): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_get_adc: wait_times = 0SUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(1)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_get_tchg: tchg = 50SUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(5)[327:logd.auditd]type=1400 audit(1792199491.882:14711): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[268:charger_thread]tmp:33 (jeita:0 sm:0 cv:0 en:0) (sm:1) en:1 c:0 s:0 ov:0 1 1
+.(1)[268:charger_thread]mtk_switch_charging_run [1 0], timer=223qs
+.(5)[327:logd.auditd]type=1400 audit(1792199491.898:14712): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.914:14713): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[0:swapper/1]Power/swap DP: No enter --- SODI3: No enter --- SODI: No enter --- 
+.(0)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_get_ibus: ibus = 1650mASUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(0)[268:charger_thread]pe40_ready:1 hv:1 thermal:-1,-1 tmp:33,39,16 pps:0 en:1 ibus:0 80
+.(1)[268:charger_thread]force:0 thermal:-1,-1 pe4:-1,-1,0 setting:2000 1600 type:4 usb_unlimited:0 usbif:0 usbsm:0 aicl:-1
+.(1)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: __mt6370_set_cv: bat voreg = 4350000 (0x2D)SUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger]J
+.(5)[327:logd.auditd]type=1400 audit(1792199491.934:14714): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[0:swapper/0]mcdi cpu: 22, 76, 105, 310, 631, 859, 795, 810, cluster : 0, 333, pause = 0, multi core = 0, residency = 0, last core = 0, avail cpu = 00ff, cluster = 0003, enabled = 1, max_s_state = 5 (buck_off = 0), system_idle_hint = 00000000
+
+.(5)[327:logd.auditd]type=1400 audit(1792199491.950:14715): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.966:14716): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.982:14717): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199491.998:14718): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.018:14719): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.034:14720): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.050:14721): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.066:14722): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.082:14723): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.102:14724): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.118:14725): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(2)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_dump_register: ICHG = 1500mA, AICR = 1850mA, MIVR = 4400mV, IEOC = 150mA, CV = 4350mVSUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(2)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_dump_register: VSYS = 3995mV, VBAT = 3965mV, IBAT = 1400mA, IBUS = 1650mA, VBUS = 4825mVSUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(2)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_dump_register: CHG_EN = 1, CHG_STATUS = progress, CHG_STAT = 0xA0SUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(2)[268:charger_thread]mt6370_pmu_charger mt6370_pmu_charger: mt6370_dump_register: CHG_CTRL1 = 0x10, CHG_CTRL2 = 0x1BSUBSYSTEM=platform
+DEVICE=+platform:mt6370_pmu_charger
+.(4)[327:logd.auditd]type=1400 audit(1792199492.134:14726): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.150:14727): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.166:14728): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.186:14729): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.202:14730): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.218:14731): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.234:14732): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.250:14733): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.270:14734): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.286:14735): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.302:14736): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.318:14737): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.334:14738): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.350:14739): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.370:14740): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.386:14741): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.402:14742): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.418:14743): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.434:14744): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.454:14745): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.470:14746): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[222:kworker/0:1]sd 0:0:0:2: [sdc] Synchronizing SCSI cacheSUBSYSTEM=scsi
+DEVICE=+scsi:0:0:0:2
+.(4)[327:logd.auditd]type=1400 audit(1792199492.486:14747): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.502:14748): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(0)[222:kworker/0:1]regulator ext_pmic2 disable
+.(0)[222:kworker/0:1]ufshcd bootdevice: rs,ret 0,30161 usSUBSYSTEM=platform
+DEVICE=+platform:bootdevice
+.(4)[327:logd.auditd]type=1400 audit(1792199492.518:14749): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.538:14750): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.554:14751): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.570:14752): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.586:14753): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.602:14754): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.618:14755): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.638:14756): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.654:14757): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.670:14758): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.686:14759): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.702:14760): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199492.722:14761): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.738:14762): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.754:14763): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.770:14764): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.786:14765): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[1069:usb ffs open]read descriptors
+.(1)[1069:usb ffs open]skip os descriptor, os_descs_count:2, len:119 all to 0
+.(1)[1069:usb ffs open]read strings
+.(5)[327:logd.auditd]type=1400 audit(1792199492.806:14766): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.822:14767): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.838:14768): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.854:14769): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.870:14770): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.890:14771): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.906:14772): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.922:14773): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+-(0)[71:kworker/u16:2]mt6358_get_auxadc_value: 6 callbacks suppressed
+.(0)[71:kworker/u16:2][mt6358_get_auxadc_value] ch_idx = 2, channel = 3, bat_cur = 14461, reg_val = 0x2fb, adc_result = 670
+.(5)[327:logd.auditd]type=1400 audit(1792199492.938:14774): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.954:14775): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.970:14776): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199492.990:14777): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.006:14778): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.022:14779): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.038:14780): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.054:14781): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.074:14782): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.090:14783): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.106:14784): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.122:14785): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.138:14786): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.158:14787): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.174:14788): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.190:14789): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.206:14790): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[1:init]init: Waiting for 70 pids to be reaped took 3020ms with 69 of them still running
+b.(1)[1:init]init: [service-misbehaving] : service 'mnld' is still running 3000ms after receiving SIGTERMQ0
+b.(1)[1:init]init: [service-misbehaving] : service 'zygote_secondary' is still running 3000ms after receiving SIGTERM
+.(5)[327:logd.auditd]type=1400 audit(1792199493.222:14791): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+b.(1)[1:init]init: [service-misbehaving] : service 'hidl_memory' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'system_suspend' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'audioserver' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'bootanim' is still running 3000ms after receiving SIGTERMW
+b.(1)[1:init]init: [service-misbehaving] : service 'cameraserver' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'credstore' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'drm' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'gatekeeperd' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'gpu' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'idmap2d' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'incidentd' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'installd' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'keystore2' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'lmkd' is still running 3000ms after receiving SIGTERMD
+b.(1)[1:init]init: [service-misbehaving] : service 'mediaextractor' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'mediametrics' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'media' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'netd' is still running 3000ms after receiving SIGTERM9
+b.(1)[1:init]init: [service-misbehaving] : service 'traced' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'traced_probes' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'storaged' is still running 3000ms after receiving SIGTERM0
+b.(1)[1:init]init: [service-misbehaving] : service 'surfaceflinger' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'wificond' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'adb_root' is still running 3000ms after receiving SIGTERMy
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.audio-hal-4-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.fps_hal' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'bluetooth-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.camera-provider-2-4-ext' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.cas-hal-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.configstore-hal' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.drm-hal-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.drm-clearkey-hal-1-1' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.drm-widevine-hal-1-1' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.gatekeeper-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.gralloc-2-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.hwcomposer-2-1' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'health-hal-2-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.keymaster-3-0' is still running 3000ms after receiving SIGTERMf
+b.(1)[1:init]init: [service-misbehaving] : service 'light-hal-2-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'mediacodec' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.memtrack-hal-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'neuralnetworks_hal_service_apunn' is still running 3000ms after receiving SIGTERME
+b.(1)[1:init]init: [service-misbehaving] : service 'neuralnetworks_hal_service_gpunn' is still running 3000ms after receiving SIGTERM|K
+b.(1)[1:init]init: [service-misbehaving] : service 'sensors-hal-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.thermal-hal-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.usb-hal-1-1' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.vibrator-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.wifi_hal_legacy' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'camerahalserver' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'fuelgauged' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'thermal' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'thermalloadalgod' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'wmt_launcher' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'lbs_hidl_service' is still running 3000ms after receiving SIGTERMZ
+b.(1)[1:init]init: [service-misbehaving] : service 'netdagent' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'PPLAgent' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'dfps-1-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'gnss_service' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'mms-1-1' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'mtkcodecservice-1-1' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'nvram-hidl-1-1' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'power-hal-2-0' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'pq-2-2' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'hwcmdservice' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'wlan_assistant' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'media.swcodec' is still running 3000ms after receiving SIGTERM
+b.(1)[1:init]init: [service-misbehaving] : service 'statsd' is still running 3000ms after receiving SIGTERM
+.(1)[1:init]init: Stopping 154 services by sending SIGKILL
+.(1)[1:init]init: Sending signal 9 to service 'netdagent' (pid 1199) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1199 in 0msb
+.(0)[1:init]init: Sending signal 9 to service 'vendor.fps_hal' (pid 1198) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1198 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'gatekeeperd' (pid 1192) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1192 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'media.swcodec' (pid 1174) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1046 pid 1174 in 0ms/&
+.(1)[1:init]init: Sending signal 9 to service 'wlan_assistant' (pid 1173) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1010 pid 1173 in 0msA~
+.(0)[1:init]init: Sending signal 9 to service 'pq-2-2' (pid 1171) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1171 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'mms-1-1' (pid 1170) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1170 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'PPLAgent' (pid 1169) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 1169 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'thermalloadalgod' (pid 1164) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1164 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'thermal' (pid 1160) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1160 in 0ms\
+.(1)[1:init]init: Sending signal 9 to service 'camerahalserver' (pid 1158) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1047 pid 1158 in 0ms!u
+.(0)[1:init]init: Sending signal 9 to service 'sensors-hal-1-0' (pid 1155) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1155 in 0mse
+.(1)[1:init]init: Sending signal 9 to service 'mediacodec' (pid 1154) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1046 pid 1154 in 0ms=
+.(0)[1:init]init: Sending signal 9 to service 'adb_root' (pid 1152) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 1152 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'wificond' (pid 1148) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1010 pid 1148 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'storaged' (pid 1146) process group...e
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 1146 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'media' (pid 1143) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1013 pid 1143 in 0ms<
+.(0)[1:init]init: Sending signal 9 to service 'mediametrics' (pid 1142) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1013 pid 1142 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'mediaextractor' (pid 1140) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1040 pid 1140 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'installd' (pid 1139) process group....
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 1139 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'incidentd' (pid 1138) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1067 pid 1138 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'idmap2d' (pid 1137) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 1137 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'cameraserver' (pid 1136) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1047 pid 1136 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'mnld' (pid 1134) process group...bUB
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1021 pid 1134 in 0msy
+.(1)[1:init]init: Sending signal 9 to service 'traced' (pid 1062) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 9999 pid 1062 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'traced_probes' (pid 1061) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 9999 pid 1061 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'drm' (pid 1059) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1019 pid 1059 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'bootanim' (pid 1056) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1003 pid 1056 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'wmt_launcher' (pid 995) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 995 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'fuelgauged' (pid 983) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 983 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'surfaceflinger' (pid 980) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 980 in 0ms
+.(3)[1:init]init: Sending signal 9 to service 'gpu' (pid 976) process group...
+.(3)[1:init]libprocessgroup: Successfully killed process cgroup uid 1072 pid 976 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'credstore' (pid 975) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1076 pid 975 in 0ms
+.(3)[1:init]init: Sending signal 9 to service 'audioserver' (pid 973) process group...
+.(3)[1:init]libprocessgroup: Successfully killed process cgroup uid 1041 pid 973 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'hwcmdservice' (pid 971) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 971 in 0msN
+.(0)[1:init]init: Sending signal 9 to service 'power-hal-2-0' (pid 970) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 970 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'nvram-hidl-1-1' (pid 969) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 969 in 0ms
+Zq
+.(0)[1:init]init: Sending signal 9 to service 'mtkcodecservice-1-1' (pid 968) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 968 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'gnss_service' (pid 967) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 967 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'dfps-1-0' (pid 966) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 966 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'lbs_hidl_service' (pid 964) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 964 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.wifi_hal_legacy' (pid 961) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1010 pid 961 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'vendor.vibrator-1-0' (pid 959) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 959 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.usb-hal-1-1' (pid 958) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 958 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'vendor.thermal-hal-1-0' (pid 957) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 957 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'neuralnetworks_hal_service_gpunn' (pid 956) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 956 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'neuralnetworks_hal_service_apunn' (pid 955) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 955 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.memtrack-hal-1-0' (pid 954) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 954 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'light-hal-2-0' (pid 953) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 953 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'health-hal-2-0' (pid 952) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 952 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'vendor.hwcomposer-2-1' (pid 948) process group...VI
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 948 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.gralloc-2-0' (pid 947) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 947 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'vendor.gatekeeper-1-0' (pid 946) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 946 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.drm-widevine-hal-1-1' (pid 945) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1013 pid 945 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'vendor.drm-clearkey-hal-1-1' (pid 944) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1013 pid 944 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.drm-hal-1-0' (pid 943) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1013 pid 943 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'vendor.configstore-hal' (pid 942) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 942 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.cas-hal-1-0' (pid 941) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1013 pid 941 in 0ms
+.(2)[1:init]init: Sending signal 9 to service 'vendor.camera-provider-2-4-ext' (pid 940) process group...
+.(2)[1:init]libprocessgroup: Successfully killed process cgroup uid 1047 pid 940 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'bluetooth-1-0' (pid 939) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1002 pid 939 in 0ms
+.(2)[1:init]init: Sending signal 9 to service 'vendor.audio-hal-4-0' (pid 938) process group...
+.(2)[1:init]libprocessgroup: Successfully killed process cgroup uid 1041 pid 938 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'system_suspend' (pid 937) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 937 in 0ms
+.(2)[1:init]init: Sending signal 9 to service 'hidl_memory' (pid 936) process group...
+.(2)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 936 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'zygote_secondary' (pid 893) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 893 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'netd' (pid 891) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 891 in 0msm
+.(1)[1:init]init: Sending signal 9 to service 'statsd' (pid 890) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1066 pid 890 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'vendor.keymaster-3-0' (pid 725) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1000 pid 725 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'keystore2' (pid 724) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 1017 pid 724 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'lmkd' (pid 320) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1069 pid 320 in 0ms
+b.(1)[1:init]init: [service-misbehaving] : service 'mnld' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'zygote_secondary' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'hidl_memory' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'system_suspend' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'audioserver' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'bootanim' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'cameraserver' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'credstore' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'drm' is still running 0ms after receiving SIGKILLO,
+b.(1)[1:init]init: [service-misbehaving] : service 'gatekeeperd' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'gpu' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'idmap2d' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'incidentd' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'installd' is still running 0ms after receiving SIGKILL
+.(5)[327:logd.auditd]type=1400 audit(1792199493.242:14792): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+b.(1)[1:init]init: [service-misbehaving] : service 'keystore2' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'lmkd' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'mediaextractor' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'mediametrics' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'media' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'netd' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'traced' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'traced_probes' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'storaged' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'surfaceflinger' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'wificond' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'adb_root' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.audio-hal-4-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.fps_hal' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'bluetooth-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.camera-provider-2-4-ext' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.cas-hal-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.configstore-hal' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.drm-hal-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.drm-clearkey-hal-1-1' is still running 0ms after receiving SIGKILL{
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.drm-widevine-hal-1-1' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.gatekeeper-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.gralloc-2-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.hwcomposer-2-1' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'health-hal-2-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.keymaster-3-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'light-hal-2-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'mediacodec' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.memtrack-hal-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'neuralnetworks_hal_service_apunn' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'neuralnetworks_hal_service_gpunn' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'sensors-hal-1-0' is still running 0ms after receiving SIGKILLu
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.thermal-hal-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.usb-hal-1-1' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.vibrator-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'vendor.wifi_hal_legacy' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'camerahalserver' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'fuelgauged' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'thermal' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'thermalloadalgod' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'wmt_launcher' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'lbs_hidl_service' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'netdagent' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'PPLAgent' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'dfps-1-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'gnss_service' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'mms-1-1' is still running 0ms after receiving SIGKILLZ*
+b.(1)[1:init]init: [service-misbehaving] : service 'mtkcodecservice-1-1' is still running 0ms after receiving SIGKILLBn
+b.(1)[1:init]init: [service-misbehaving] : service 'nvram-hidl-1-1' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'power-hal-2-0' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'pq-2-2' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'hwcmdservice' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'wlan_assistant' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'media.swcodec' is still running 0ms after receiving SIGKILL
+b.(1)[1:init]init: [service-misbehaving] : service 'statsd' is still running 0ms after receiving SIGKILL
+.(1)[1:init]init: Calling /system/bin/vdc volume abort_fuse
+.(5)[327:logd.auditd]type=1400 audit(1792199493.258:14793): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[4839:vdc]binder: 4839:4839 ioctl 40046210 7fdfa2efe4 returned -22
+.(1)[4839:vdc]ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+.(1)[4839:vdc]vdc: Waited 0ms for vold
+.(5)[327:logd.auditd]type=1400 audit(1792199493.266:14794): avc: denied { getattr } for comm="Binder:329_2" scontext=u:r:vold:s0 tcontext=u:r:vdc:s0 tclass=process permissive=0*}
+.(1)[1:init]init: Calling /system/bin/vdc volume shutdown
+.(5)[327:logd.auditd]type=1400 audit(1792199493.274:14795): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[4840:vdc]binder: 4840:4840 ioctl 40046210 7fd54b0eb4 returned -22
+.(1)[4840:vdc]ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+.(0)[4840:vdc]vdc: Waited 0ms for vold
+.(5)[327:logd.auditd]type=1400 audit(1792199493.290:14796): avc: denied { getattr } for comm="Binder:329_2" scontext=u:r:vold:s0 tcontext=u:r:vdc:s0 tclass=process permissive=0X
+.(0)[1:init]init: Sending signal 9 to service 'vold' (pid 329) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 329 in 0ms
+.(3)[1:init]init: Stopping 4 services by sending SIGKILL4
+.(3)[1:init]init: Sending signal 9 to service 'adbd' (pid 1055) process group...
+.(3)[1:init]libprocessgroup: Successfully killed process cgroup uid 0 pid 1055 in 0ms
+.(0)[1:init]init: Sending signal 9 to service 'tombstoned' (pid 728) process group...
+.(0)[1:init]libprocessgroup: Successfully killed process cgroup uid 1058 pid 728 in 0ms
+.(1)[1:init]init: Sending signal 9 to service 'console' (pid 328) process group...
+.(1)[1:init]libprocessgroup: Successfully killed process cgroup uid 2000 pid 328 in 0ms
+.(2)[1:init]init: Sending signal 9 to service 'logd' (pid 319) process group...
+.(2)[1:init]libprocessgroup: Successfully killed process cgroup uid 1036 pid 319 in 0ms
+.(1)[1:init]init: Subcontext received signal 15
+.(1)[1:init]init: sync() before umount...
+.(5)[327:logd.auditd]type=1400 audit(1792199493.290:14797): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(3)[210:kworker/3:1]regulator ext_pmic2 is_enabled
+.(3)[210:kworker/3:1]regulator ext_pmic2 enable
+.(5)[327:logd.auditd]type=1400 audit(1792199493.306:14798): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(5)[327:logd.auditd]type=1400 audit(1792199493.322:14799): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(3)[210:kworker/3:1]ufshcd bootdevice: rr,ret 0,39439 usSUBSYSTEM=platform
+DEVICE=+platform:bootdevice
+.(1)[1:init]init: sync() before umount took44ms
+.(1)[1:init]init: No zram backing device configured
+.(1)[1:init]init: Ready to unmount apexes. So far shutdown sequence took 3211ms
+.(4)[327:logd.auditd]type=1400 audit(1792199493.342:14800): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.358:14801): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.374:14802): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/ref_profiles opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/ref_profiles opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/cur_profiles opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/cur_profiles opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/data_de/null opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/data_de/null opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered+g
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/data_ce/null/0 opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/data_ce/null/0 opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/data_ce/null opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/userdata:/data_mirror/data_ce/null opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data/user/0 opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Cannot umount /dev/block/platform/bootdevice/by-name/userdata:/data/user/0 opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered: Invalid argument
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/noah:/mnt/vendor/noah opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered*
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/noah:/mnt/vendor/noah opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/nvcfg:/mnt/vendor/nvcfg opts rw,seclabel,nosuid,nodev,noatime,nodelalloc,noauto_da_alloc,commit=1,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/nvcfg:/mnt/vendor/nvcfg opts rw,seclabel,nosuid,nodev,noatime,nodelalloc,noauto_da_alloc,commit=1,data=orderedAAj
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/nvdata:/mnt/vendor/nvdata opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered
+.(4)[327:logd.auditd]type=1400 audit(1792199493.390:14803): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/nvdata:/mnt/vendor/nvdata opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/protect2:/mnt/vendor/protect_s opts rw,seclabel,nosuid,nodev,noatime,nodelalloc,noauto_da_alloc,commit=1,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/protect2:/mnt/vendor/protect_s opts rw,seclabel,nosuid,nodev,noatime,nodelalloc,noauto_da_alloc,commit=1,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/protect1:/mnt/vendor/protect_f opts rw,seclabel,nosuid,nodev,noatime,nodelalloc,noauto_da_alloc,commit=1,data=ordered
+.(1)[1:init]init: Umounted /dev/block/platform/bootdevice/by-name/protect1:/mnt/vendor/protect_f opts rw,seclabel,nosuid,nodev,noatime,nodelalloc,noauto_da_alloc,commit=1,data=ordered
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/cache:/cache opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered
+.(1)[1:init]init: Cannot umount /dev/block/platform/bootdevice/by-name/cache:/cache opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered: Device or resource busy
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Cannot umount /dev/block/platform/bootdevice/by-name/userdata:/data opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered: Device or resource busy
+.(4)[327:logd.auditd]type=1400 audit(1792199493.410:14804): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.426:14805): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.442:14806): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.458:14807): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.478:14808): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.494:14809): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.510:14810): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/cache:/cache opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered
+.(1)[1:init]init: Cannot umount /dev/block/platform/bootdevice/by-name/cache:/cache opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered: Device or resource busy
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Cannot umount /dev/block/platform/bootdevice/by-name/userdata:/data opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered: Device or resource busy
+.(4)[327:logd.auditd]type=1400 audit(1792199493.526:14811): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.542:14812): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.562:14813): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.578:14814): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.594:14815): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.610:14816): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/cache:/cache opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered
+.(1)[1:init]init: Cannot umount /dev/block/platform/bootdevice/by-name/cache:/cache opts rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered: Device or resource busy
+.(1)[1:init]init: Unmounting /dev/block/platform/bootdevice/by-name/userdata:/data opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered
+.(1)[1:init]init: Cannot umount /dev/block/platform/bootdevice/by-name/userdata:/data opts rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,resgid=1065,errors=panic,data=ordered: Device or resource busy
+.(4)[327:logd.auditd]type=1400 audit(1792199493.626:14817): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(2)[71:kworker/u16:2][mt6358_get_auxadc_value] ch_idx = 5, channel = 4, reg_val = 0x611, adc_result = 682
+.(4)[327:logd.auditd]type=1400 audit(1792199493.646:14818): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.662:14819): avc: denied { getattr } for comm="Binder:980_4" scontext=u:r:surfaceflinger:s0 tcontext=u:r:bootanim:s0 tclass=process permissive=0
+.(4)[327:logd.auditd]type=1400 audit(1792199493.678:14820): avc: denied { getattr } for comm="Binder:980_4" scontext=u:
